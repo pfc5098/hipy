@@ -1,2 +1,7 @@
 *.pyc
 aws_config.csv
+.Rproj.user
+hipy.Rproj
+.Renviron
+r-lib/
+
