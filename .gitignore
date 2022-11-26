@@ -1,3 +1,5 @@
 *.pyc
 .Rproj.user
 hipy.Rproj
+.Renviron
+r-lib/
