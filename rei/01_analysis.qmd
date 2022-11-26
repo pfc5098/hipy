@@ -10,6 +10,8 @@ editor_options:
 library(tidyverse)
 library(janitor)
 library(fpp3)
+library(data.table)
+library(here)
 ```
 
 ```{r}
@@ -25,6 +27,8 @@ df1 <- df %>%
 tsbl <- df1 %>% 
   mutate(yr_mnth = yearmonth(yr_mnth)) %>% 
   as_tsibble(key = c(region_name, state, metro), index = yr_mnth)
+
+fwrite(tsbl, "/Users/pengchen/hipy/rei/tsbl.csv")
 ```
 
 ```{r}
@@ -35,4 +39,6 @@ tsbl %>%
   autoplot(.vars = price) +
   theme_light()
 ```
+
+
 

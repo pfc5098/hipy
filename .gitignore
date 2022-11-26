@@ -4,4 +4,5 @@ aws_config.csv
 hipy.Rproj
 .Renviron
 r-lib/
+*.csv
 
