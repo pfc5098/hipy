@@ -5,4 +5,5 @@ hipy.Rproj
 .Renviron
 r-lib/
 *.csv
+!titanic3.csv
 
