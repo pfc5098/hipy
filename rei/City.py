@@ -6,9 +6,14 @@ class City:
     def __init__(self, city, state, data):
         self.city = city
         self.state = state
+
         self.df = data[(data['RegionName'] == self.city) \
                        & (data['State'] == self.state)]
+
         self.price_arr = self.df.iloc[:, 8:].values.flatten()
+        self.price_arr = self.price_arr[~np.isnan(self.price_arr)]
+
+        self.num_pd = len(self.price_arr)
         
 
     def most_recent_price(self):
@@ -19,7 +24,7 @@ class City:
 
     def linearity_score(self, plot = False):
         # Prepare data 
-        y = self.price_arr[~np.isnan(self.price_arr)]
+        y = self.price_arr
         X = (np.arange(len(y)) + 1).reshape(-1, 1)
 
         # Fit a linear regression model to the data

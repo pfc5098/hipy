@@ -6,3 +6,4 @@ hipy.Rproj
 r-lib/
 *.csv
 !titanic3.csv
+.DS_Store
